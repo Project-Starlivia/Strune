@@ -1,6 +1,8 @@
 # Strune
 Strune is a **simple, directional knowledge structure**.
 It is primarily intended to function as a word book or a lightweight linked reference, but how you use it is entirely up to you.
+
+[日本語](./README_JA.md)
 ## Data Structure
 ```json
 {
