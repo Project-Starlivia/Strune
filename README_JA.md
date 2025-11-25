@@ -48,6 +48,6 @@ or
 ## options
 <options>
 ```
-options、dependenceは任意です。obsidianで使いたかったので`[[<dependence01>]]`にも対応しました。
+label以外は任意です。obsidianで使いたかったので`[[<dependence01>]]`にも対応しました。
 ## 表示部分 - PerseusView
 Perseusを使ったssgによるビューワーです。アニメーションとか頑張りました。

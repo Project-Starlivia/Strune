@@ -58,7 +58,7 @@ or
 <options>
 ```
 
-options and dependence are optional.
+Other than labels are optional.
 For Obsidian compatibility, the `[[<dependence01>]]` notation is also supported.
 
 ## Viewer – PerseusView
