@@ -39,7 +39,6 @@ Rust is used as the primary implementation language simply because I wanted to t
 
 > ## ⚠️ Beta Notice
 > The following components are still in beta and may undergo breaking API changes.
-The data structure itself will not change.
 
 ## Markdown Parser – MdParser
 
