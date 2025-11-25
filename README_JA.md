@@ -1,4 +1,8 @@
 # Strune
+<p align="center">
+  <img src="./logo.svg" alt="logo" width="120">
+</p>
+
 Struneは、**シンプルで指向性のある知識構造**です。基本的には単語帳・リンク集として運用する想定ですが、どのように使用するかはあなた次第です。
 
 [English](./README_JA.md)

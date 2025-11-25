@@ -1,4 +1,8 @@
 # Strune
+<p align="center">
+  <img src="./logo.svg" alt="logo" width="120">
+</p>
+
 Strune is a **simple, directional knowledge structure**.
 It is primarily intended to function as a word book or a lightweight linked reference, but how you use it is entirely up to you.
 
