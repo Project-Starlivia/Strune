@@ -1,0 +1,8 @@
+[
+  { "label": "ProgrammingLanguage" },
+  { "label": "FunctionalLanguage" },
+  { "label": "Rust", "dependencies": ["ProgrammingLanguage", "FunctionalLanguage"] },
+  { "label": "Go", "dependencies": ["ProgrammingLanguage", "FunctionalLanguage"] },
+  { "label": "JavaScript", "dependencies": ["ProgrammingLanguage"] },
+  { "label": "TypeScript", "dependencies": ["ProgrammingLanguage", "JavaScript"] }
+]

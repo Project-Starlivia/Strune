@@ -11,20 +11,20 @@ Struneは、**シンプルで指向性のある知識構造**です。基本的�
 {
     "label": "string",
     "description": "string",
-    "dependence": label[],
+    "dependencies": label[],
     "options": any
 }
 ```
 - label: 知識の名前。
 - description: 知識の説明。基本的に最大200文字程度の短文です。
-- dependence: その知識から見た親に当たる知識群。データ形式は他のlabel(文字列)の配列です。
+- dependencies: その知識から見た親に当たる知識群。データ形式は他のlabel(文字列)の配列です。
 - options: ユーザーの自由に定義できる拡張フィールドです。
 
-dependenceは単に関係性のリンクではない点に注意してください。解釈は最終的にユーザーに委ねられますが、基本的に含有されている要素を記述します。
+dependencies。解釈は最終的にユーザーに委ねられますが、基本的に含有されている要素を記述します。
 
 例
-- `Unity`のdependenceには`ゲームエンジン`などが記述されます。
-- `Blender`と`FBX`は互いにdependenceに記載されます。
+- `Unity`dependencies`ゲームエンジン`などが記述されます。
+- `Blender`と`FBX`は互いにdependenciesに記載されます。
 
 ## 曖昧じゃない？
 はい。知識は元来親子のようなシンプルな関係で記述できるものでは在りません。そこを無理やりこじつけてビジュアル化してやろうという概念です。
@@ -43,7 +43,7 @@ jsonを書くのはしんどいしとはいえEditor作るのも重いと感じ�
 # <label>
 ## description
 <description>
-## dependence
+## dependencies
 - <dependence01>
 - <dependence02>
 or
@@ -53,5 +53,3 @@ or
 <options>
 ```
 labe以外は任意です。obsidianで使いたかったので`[[<dependence01>]]`にも対応しました。
-## 表示部分 - PerseusView
-Perseusを使ったssgによるビューワーです。アニメーションとか頑張りました。

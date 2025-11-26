@@ -1,0 +1,1 @@
+D:\projects\Strune\target\debug\cli.exe: D:\projects\Strune\apps\cli\src\lib.rs D:\projects\Strune\apps\cli\src\main.rs D:\projects\Strune\core\src\lib.rs D:\projects\Strune\core\src\node.rs D:\projects\Strune\packages\loader\src\lib.rs D:\projects\Strune\packages\loader\src\loader.rs
