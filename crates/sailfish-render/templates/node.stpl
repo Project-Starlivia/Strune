@@ -1,0 +1,20 @@
+﻿<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title><%= self.node.label %></title>
+  </head>
+  <body>
+    <h1><%= self.node.label %></h1>
+    <p><%= self.node.description %></p>
+
+    <% if !self.node.dependencies.is_empty() { %>
+      <h2>Depends on</h2>
+      <ul>
+        <% for dep in &self.node.dependencies { %>
+          <li><%= dep %></li>
+        <% } %>
+      </ul>
+    <% } %>
+  </body>
+</html>

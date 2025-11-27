@@ -1,8 +1,9 @@
-﻿[workspace]
+[workspace]
 members = [
     "core",
-    "apps/cli",
-    "packages/loader",
+    "cli",
+    "crates/loader",
+    "crates/sailfish-render",
 ]
 
 resolver = "3"
