@@ -3,9 +3,19 @@ use std::path::Path;
 use anyhow::Result;
 use loader::load_nodes_from_file;
 use render::render_node_page;
+use serde::Deserialize;
 
+use core::node::Node;
+
+#[derive(Debug, Deserialize)]
+struct MyOptions {
+    #[serde(rename = "updatedAt")]
+    updated_at: String,
+    #[serde(default)]
+    tags: Vec<String>,
+}
 fn main() -> Result<()> {
-    let nodes = load_nodes_from_file("content/sample.json")?;
+    let nodes = load_nodes_from_file::<MyOptions>("content/sample.json")?;
     println!("nodes: {}", nodes.len());
 
     fs::create_dir_all("dist")?;

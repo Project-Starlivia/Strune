@@ -2,11 +2,11 @@
 use sailfish::TemplateOnce;
 
 #[derive(TemplateOnce)]
-#[template(path="node.stpl")]
-struct NodeTemplate<'a> {
-    node: &'a Node
+#[template(path = "node.stpl")]
+struct NodeTemplate<'a, T> {
+    node: &'a Node<T>,
 }
 
-pub fn render_node_page(node: &Node) -> Result<String, sailfish::RenderError> {
+pub fn render_node_page<T>(node: &Node<T>) -> Result<String, sailfish::RenderError> {
     NodeTemplate { node }.render_once()
 }

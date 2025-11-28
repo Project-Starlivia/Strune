@@ -8,3 +8,4 @@ core   = { path = "../core" }
 loader = { path = "../crates/loader" }
 render = { package = "sailfish-render", path = "../crates/sailfish-render" }
 anyhow = "1"
+serde = { version = "1.0.228", features = ["derive"] }

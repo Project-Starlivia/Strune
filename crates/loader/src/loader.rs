@@ -1,7 +1,7 @@
 ﻿use std::path::Path;
 use core::node::Node;
 use serde::Deserialize;
-
+use serde_json::Value;
 
 #[derive(Debug, Deserialize)]
 struct RawNode {
@@ -10,27 +10,33 @@ struct RawNode {
     description: String,
     #[serde(default)]
     dependencies: Vec<String>,
+    #[serde(default)]
+    pub options: Value
 }
 
-pub fn load_nodes_from_file<P: AsRef<Path>>(file: P) -> anyhow::Result<Vec<Node>> {
-    let path = file.as_ref();
+impl RawNode {
+    pub fn to_node<T>(&self) -> Result<Node<T>, serde_json::Error>
+    where
+        T: serde::de::DeserializeOwned,
+    {
+        let opts: T = serde_json::from_value(self.options.clone())?;
 
-    if path.extension().and_then(|s| s.to_str()) != Some("json") {
-        anyhow::bail!("JSONファイルではありません: {:?}", path);
+        Ok(Node {
+            label: self.label.clone(),
+            description: self.description.clone(),
+            dependencies: self.dependencies.clone(),
+            options: opts,
+        })
     }
-
-    let content = std::fs::read_to_string(path)?;
-
+}
+pub fn load_nodes_from_file<T>(file: impl AsRef<Path>) -> anyhow::Result<Vec<Node<T>>>
+where
+    T: serde::de::DeserializeOwned,
+{
+    let content = std::fs::read_to_string(file)?;
     let raws: Vec<RawNode> = serde_json::from_str(&content)?;
 
-    let nodes = raws
-        .into_iter()
-        .map(|raw| Node {
-            label: raw.label,
-            description: raw.description,
-            dependencies: raw.dependencies,
-        })
-        .collect();
-
-    Ok(nodes)
+    raws.into_iter()
+        .map(|raw| raw.to_node::<T>().map_err(Into::into))
+        .collect()
 }

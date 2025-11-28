@@ -1,5 +1,5 @@
 [
-  { "label": "ProgrammingLanguage" },
+  { "label": "ProgrammingLanguage", "options": { "updatedAt": "2023-01-01"} },
   { "label": "FunctionalLanguage" },
   { "label": "Rust", "dependencies": ["ProgrammingLanguage", "FunctionalLanguage"] },
   { "label": "Go", "dependencies": ["ProgrammingLanguage", "FunctionalLanguage"] },
