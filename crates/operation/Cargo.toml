@@ -1,10 +1,10 @@
 [package]
-name = "sailfish-render"
+name = "operation"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-sailfish = "0.10.0"
+serde_json = "1.0.145"
 
 core = { path = "../../core" }
-operation = { path = "../../crates/operation" }
+serde = "1.0.228"

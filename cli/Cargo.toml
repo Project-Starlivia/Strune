@@ -4,8 +4,9 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-core   = { path = "../core" }
-loader = { path = "../crates/loader" }
-render = { package = "sailfish-render", path = "../crates/sailfish-render" }
 anyhow = "1"
 serde = { version = "1.0.228", features = ["derive"] }
+
+render = { package = "sailfish-render", path = "../crates/sailfish-render" }
+operation = { path = "../crates/operation" }
+loader = { path = "../crates/loader" }

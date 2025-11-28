@@ -1,24 +1,19 @@
 use std::fs;
 use std::path::Path;
+use serde::Deserialize;
 use anyhow::Result;
+
 use loader::load_nodes_from_file;
 use render::render_node_page;
-use serde::Deserialize;
+use operation::{fill_dependents, NodeWithDependents};
 
-use core::node::Node;
-
-#[derive(Debug, Deserialize)]
-struct MyOptions {
-    #[serde(rename = "updatedAt")]
-    updated_at: String,
-    #[serde(default)]
-    tags: Vec<String>,
-}
 fn main() -> Result<()> {
-    let nodes = load_nodes_from_file::<MyOptions>("content/sample.json")?;
+    let nodes: Vec<NodeWithDependents> = load_nodes_from_file("content/sample.json")?;
     println!("nodes: {}", nodes.len());
-
+    let nodes = fill_dependents(nodes);
+    println!("nodes: {}", nodes.len());
     fs::create_dir_all("dist")?;
+
 
     for node in &nodes {
         let html = render_node_page(node)?;
@@ -27,6 +22,7 @@ fn main() -> Result<()> {
         fs::write(&path, html)?;
         println!("-> {:?}", path);
     }
-
+/*
+*/
     Ok(())
 }

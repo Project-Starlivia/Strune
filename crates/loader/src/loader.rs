@@ -1,7 +1,7 @@
 ﻿use std::path::Path;
 use core::node::Node;
 use serde::Deserialize;
-use serde_json::Value;
+use serde_json::{Value, Map};
 
 #[derive(Debug, Deserialize)]
 struct RawNode {
@@ -15,11 +15,15 @@ struct RawNode {
 }
 
 impl RawNode {
-    pub fn to_node<T>(&self) -> Result<Node<T>, serde_json::Error>
+    pub fn to_node<T>(self) -> Result<Node<T>, serde_json::Error>
     where
         T: serde::de::DeserializeOwned,
     {
-        let opts: T = serde_json::from_value(self.options.clone())?;
+        let opt_values = match self.options {
+            Value::Null => Value::Object(Map::new()),
+            other => other,
+        };
+        let opts: T = serde_json::from_value(opt_values)?;
 
         Ok(Node {
             label: self.label.clone(),

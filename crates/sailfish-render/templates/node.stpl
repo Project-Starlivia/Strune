@@ -9,9 +9,17 @@
     <p><%= self.node.description %></p>
 
     <% if !self.node.dependencies.is_empty() { %>
-      <h2>Depends on</h2>
+      <h2>Dependencies on</h2>
       <ul>
         <% for dep in &self.node.dependencies { %>
+          <li><%= dep %></li>
+        <% } %>
+      </ul>
+    <% } %>
+    <% if !self.node.options.dependents.is_empty() { %>
+      <h2>Dependents on</h2>
+      <ul>
+        <% for dep in &self.node.options.dependents { %>
           <li><%= dep %></li>
         <% } %>
       </ul>
