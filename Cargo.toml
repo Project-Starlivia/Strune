@@ -3,7 +3,7 @@ members = [
     "core",
     "cli",
     "crates/loader",
-    "crates/sailfish-render", "crates/operation",
+    "crates/operation", "crates/tera-render",
 ]
 
 resolver = "3"

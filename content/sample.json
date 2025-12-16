@@ -1,8 +1,9 @@
 [
-  { "label": "ProgrammingLanguage", "options": { "updatedAt": "2023-01-01"} },
-  { "label": "FunctionalLanguage" },
-  { "label": "Rust", "dependencies": ["ProgrammingLanguage", "FunctionalLanguage"] },
-  { "label": "Go", "dependencies": ["ProgrammingLanguage", "FunctionalLanguage"] },
-  { "label": "JavaScript", "dependencies": ["ProgrammingLanguage"] },
-  { "label": "TypeScript", "dependencies": ["ProgrammingLanguage", "JavaScript"] }
+  { "label": "Strune", "dependencies": ["Rust", "ProjectStarlivia"] },
+  { "label": "ProjectStarlivia", "dependencies": [] },
+  { "label": "Rust", "dependencies": ["Programming Languages"] },
+  { "label": "TypeScript", "dependencies": ["Programming Languages"] },
+  { "label": "Programming Languages", "options": { "slug": "programming_languages" } },
+  { "label": "crates_sailfish-render", "dependencies": ["Strune", "Sailfish"] },
+  { "label": "Sailfish", "dependencies": ["Rust"] }
 ]
