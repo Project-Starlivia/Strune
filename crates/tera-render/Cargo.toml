@@ -9,5 +9,5 @@ serde_json = "1.0.145"
 tera = "1.20.1"
 anyhow = "1.0.100"
 
-core = { path = "../../core" }
+strune_core = { path = "../../strune_core" }
 operation = { path = "../operation" }

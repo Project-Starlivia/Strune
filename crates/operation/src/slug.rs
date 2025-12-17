@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use core::node::Node;
+use strune_core::node::Node;
 
 pub trait MaybeSlug {
     fn slug(&self) -> Option<&str>;

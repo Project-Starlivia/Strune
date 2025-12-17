@@ -59,9 +59,9 @@ dependencies = [
 
 [[package]]
 name = "bumpalo"
-version = "3.19.0"
+version = "3.19.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "46c5e41b57b8bba42a04676d81cb89e9ee8e859a1a66f80a5a72e1cb76b34d43"
+checksum = "5dd9dc738b7a8311c7ade152424974d8115f2cdad61e8dab8dac9f2362298510"
 
 [[package]]
 name = "cc"
@@ -117,20 +117,12 @@ name = "cli"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "core",
  "loader",
  "operation",
  "serde",
  "serde_json",
+ "strune_core",
  "tera-render",
-]
-
-[[package]]
-name = "core"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_json",
 ]
 
 [[package]]
@@ -323,9 +315,9 @@ checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
 
 [[package]]
 name = "libc"
-version = "0.2.177"
+version = "0.2.178"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2874a2af47a2325c2001a6e6fad9b16a53b802102b528163885171cf92b15976"
+checksum = "37c93d8daa9d8a012fd8ab92f088405fb202ea0b6ab73ee2482ae66af4f42091"
 
 [[package]]
 name = "libm"
@@ -338,9 +330,12 @@ name = "loader"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "core",
+ "once_cell",
+ "regex",
  "serde",
  "serde_json",
+ "strune_core",
+ "thiserror",
 ]
 
 [[package]]
@@ -374,9 +369,9 @@ checksum = "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
 name = "operation"
 version = "0.1.0"
 dependencies = [
- "core",
  "serde",
  "serde_json",
+ "strune_core",
 ]
 
 [[package]]
@@ -659,6 +654,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "strune_core"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "syn"
 version = "2.0.111"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -696,11 +699,31 @@ name = "tera-render"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "core",
  "operation",
  "serde",
  "serde_json",
+ "strune_core",
  "tera",
+]
+
+[[package]]
+name = "thiserror"
+version = "2.0.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f63587ca0f12b72a0600bcba1d40081f830876000bb46dd2337a3051618f4fc8"
+dependencies = [
+ "thiserror-impl",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "2.0.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3ff15c8ecd7de3849db632e14d18d2571fa09dfc5ed93479bc4485c7a517c913"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

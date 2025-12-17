@@ -4,7 +4,7 @@ use std::path::Path;
 use serde::Serialize;
 use tera::{Tera, Context};
 
-use core::node::Node;
+use strune_core::node::Node;
 use operation::slug::{label_slug_map, MaybeSlug};
 
 #[derive(Serialize)]
@@ -33,6 +33,10 @@ where
         stem_map: label_slug_map(nodes),
     };
 
+    for stem in &opt.stem_map {
+        println!("stem: {:?}", stem.clone());
+    }
+
     let mut ctx = Context::new();
     ctx.insert("options", &opt);
     for node in nodes {
@@ -40,6 +44,7 @@ where
 
         let file_stem = opt.stem_map.get(&node.label).unwrap();
         let path = output_dir.as_ref().join(format!("{file_stem}.html"));
+        println!("{:?}", node.to_string());
 
         let html = tera.render(template_path, &ctx)?;
         fs::write(path, html).map_err(|e| tera::Error::msg(e.to_string()))?;

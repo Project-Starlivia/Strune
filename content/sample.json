@@ -1,9 +1,11 @@
 [
-  { "label": "Strune", "dependencies": ["Rust", "ProjectStarlivia"] },
-  { "label": "ProjectStarlivia", "dependencies": [] },
+  { "label": "Strune", "dependencies": ["Rust", "Project Starlivia"] },
+  { "label": "Project Starlivia", "dependencies": [], "options": { "slug": "project-starlivia" }  },
   { "label": "Rust", "dependencies": ["Programming Languages"] },
   { "label": "TypeScript", "dependencies": ["Programming Languages"] },
   { "label": "Programming Languages", "options": { "slug": "programming_languages" } },
-  { "label": "crates_sailfish-render", "dependencies": ["Strune", "Sailfish"] },
-  { "label": "Sailfish", "dependencies": ["Rust"] }
+  { "label": "crates/tera-render", "dependencies": ["Strune", "tera"], "options": { "slug": "crates_sailfish-render" } },
+  { "label": "tera", "description": "https://github.com/Keats/tera", "dependencies": ["Rust", "Template Engine"] },
+  { "label": "Template Engine", "options": { "slug": "template-engine" } },
+  { "label": "Sailfish", "dependencies": ["Rust", "Template Engine"] }
 ]

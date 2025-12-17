@@ -1,15 +1,18 @@
+use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use anyhow::Result;
 use serde_json::Value;
 
-use loader::load_nodes_from_file;
+use strune_core::node::Node;
 use render::render_simple;
 use operation::{impl_maybe_dependents, impl_maybe_slug};
-use core::node::Node;
+use loader::json::load_nodes_from_json;
+use loader::markdown::load_nodes_from_markdown;
 use operation::dependents::fill_dependents;
 
 #[derive(Clone, Debug, Serialize, Deserialize, Default)]
-pub struct OptionsExt<T> {
+pub struct MyOpts<T>
+{
     #[serde(flatten)]
     pub base: T,
     #[serde(default)]
@@ -18,13 +21,18 @@ pub struct OptionsExt<T> {
     pub dependents: Option<Vec<String>>,
 }
 
-impl_maybe_slug!(OptionsExt);
-impl_maybe_dependents!(OptionsExt);
+impl_maybe_slug!(MyOpts);
+impl_maybe_dependents!(MyOpts);
 
 fn main() -> Result<()> {
-    let nodes: Vec<Node<OptionsExt<Value>>> = load_nodes_from_file("content/sample.json")?;
+    let nodes: Vec<Node<MyOpts<Value>>> = load_nodes_from_markdown("content/sample.md")?;
+
+
     let nodes = fill_dependents(nodes);
 
+    for node in nodes.iter() {
+        println!("{:?}", node.to_string());
+    }
     println!("nodes: {}", nodes.len());
 
     render_simple(

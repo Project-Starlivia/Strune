@@ -1,7 +1,8 @@
 ﻿use std::path::Path;
-use core::node::Node;
 use serde::Deserialize;
 use serde_json::{Value, Map};
+
+use strune_core::node::Node;
 
 #[derive(Debug, Deserialize)]
 struct RawNode {
@@ -33,11 +34,30 @@ impl RawNode {
         })
     }
 }
-pub fn load_nodes_from_file<T>(file: impl AsRef<Path>) -> anyhow::Result<Vec<Node<T>>>
+
+#[derive(Debug)]
+pub enum LoadError {
+    Io(std::io::Error),
+    Json(serde_json::Error),
+}
+
+impl From<std::io::Error> for LoadError {
+    fn from(e: std::io::Error) -> Self {
+        LoadError::Io(e)
+    }
+}
+
+impl From<serde_json::Error> for LoadError {
+    fn from(e: serde_json::Error) -> Self {
+        LoadError::Json(e)
+    }
+}
+
+pub fn load_nodes_from_json<T>(path: impl AsRef<Path>) -> Result<Vec<Node<T>>, LoadError>
 where
     T: serde::de::DeserializeOwned,
 {
-    let content = std::fs::read_to_string(file)?;
+    let content = std::fs::read_to_string(path)?;
     let raws: Vec<RawNode> = serde_json::from_str(&content)?;
 
     raws.into_iter()

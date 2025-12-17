@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use core::node::Node;
+use strune_core::node::Node;
 
 pub trait MaybeDependents {
     fn dependents(&self) -> Option<&[String]>;

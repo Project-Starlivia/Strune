@@ -1,6 +1,6 @@
 [workspace]
 members = [
-    "core",
+    "strune_core",
     "cli",
     "crates/loader",
     "crates/operation", "crates/tera-render",
