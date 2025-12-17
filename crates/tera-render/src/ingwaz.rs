@@ -65,7 +65,7 @@ where
 
     let mut ctx = Context::new();
 
-    ctx.insert("page_logo_path", "https://raw.githubusercontent.com/Project-Starlivia/Strune/refs/heads/main/logo.svg");
+    ctx.insert("page_logo_path", "/public/logo.png");
     ctx.insert("page_title", "Strune");
     let header_links: Vec<Value> = Vec::new();
     ctx.insert("header_links", &header_links);
