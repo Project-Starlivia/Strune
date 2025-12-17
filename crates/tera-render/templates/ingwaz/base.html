@@ -14,8 +14,8 @@
     {% endblock head %}
 </head>
 <body>
-{{ header::input(page_logo_path = page_logo_path, page_title = page_title, header_links = header_links) }}
-<div id="content">{% block content %}{% endblock content %}</div>
+{{ header::input(brand_logo_path = brand_logo_path, brand_title = brand_title, header_links = header_links) }}
+<main id="content">{% block content %}{% endblock content %}</main>
 {% include "components/powered_by_strune.html" ignore missing %}
 </body>
 </html>

@@ -6,19 +6,21 @@
   <div id="node_view_container">
 
     {% if dependencies %}
-    <div id="dependencies_container" class="link-nodes_container">
+    <section id="dependencies_section" class="link-nodes_section">
       <h2>Dependencies</h2>
       {{ link_nodes::input(nodes = dependencies) }}
-    </div>
+    </section>
     {% endif %}
 
-    {{ node_details::input(label = current_node.label, description = current_node.description) }}
+    <section id="current_node_section" class="link-nodes_section">
+      {{ node_details::input(label = current_node.label, description = current_node.description) }}
+    </section>
 
     {% if dependents %}
-    <div id="dependents_container" class="link-nodes_container">
+    <section id="dependents_section" class="link-nodes_section">
       <h2>Dependents</h2>
       {{ link_nodes::input(nodes = dependents) }}
-    </div>
+    </section>
     {% endif %}
   </div>
 {% endblock content %}

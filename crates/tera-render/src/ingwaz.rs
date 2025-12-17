@@ -67,8 +67,8 @@ where
     let mut ctx = Context::new();
 
     ctx.insert("base_path", base_path);
-    ctx.insert("page_logo_path", "public/logo.svg");
-    ctx.insert("page_title", "Strune");
+    ctx.insert("brand_logo_path", "public/logo.svg");
+    ctx.insert("brand_title", "Strune");
     let header_links: Vec<Value> = Vec::new();
     ctx.insert("header_links", &header_links);
 
