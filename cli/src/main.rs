@@ -74,5 +74,13 @@ fn main() -> Result<()> {
         println!("Copied public directory to dist/public");
     }
 
+    // Copy strune.html to index.html if it exists
+    let strune_html_path = dist_path.join("strune.html");
+    if strune_html_path.exists() {
+        let index_html_path = dist_path.join("index.html");
+        fs::copy(&strune_html_path, &index_html_path)?;
+        println!("Copied strune.html to index.html");
+    }
+
     Ok(())
 }
