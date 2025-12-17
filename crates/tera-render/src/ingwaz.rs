@@ -66,7 +66,7 @@ where
 
     let mut ctx = Context::new();
 
-    ctx.insert("base_path", "");
+    ctx.insert("base_path", base_path);
     ctx.insert("page_logo_path", "public/logo.png");
     ctx.insert("page_title", "Strune");
     let header_links: Vec<Value> = Vec::new();
