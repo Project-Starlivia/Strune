@@ -44,7 +44,6 @@ where
     let mut first_text = true;
 
     for line in content.lines() {
-        println!("{}", line);
         if let Some(caps) = HEADING_RE.captures(line) {
             let level = caps[1].len();
             let title = caps[2].to_string();

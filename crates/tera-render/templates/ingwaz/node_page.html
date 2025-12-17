@@ -1,0 +1,24 @@
+{% extends "ingwaz/base.html" %}
+
+{% block content %}
+  {{ super() }}
+  <h1>{{ current_node.label }}</h1>
+  <div id="node_view_container">
+
+    {% if dependencies %}
+    <div id="dependencies_container" class="link-nodes_container">
+      <h2>Dependencies</h2>
+      {{ link_nodes::input(nodes = dependencies) }}
+    </div>
+    {% endif %}
+
+    {{ node_details::input(label = current_node.label, description = current_node.description) }}
+
+    {% if dependents %}
+    <div id="dependents_container" class="link-nodes_container">
+      <h2>Dependents</h2>
+      {{ link_nodes::input(nodes = dependents) }}
+    </div>
+    {% endif %}
+  </div>
+{% endblock content %}

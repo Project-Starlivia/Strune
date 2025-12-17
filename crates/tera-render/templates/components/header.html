@@ -1,0 +1,9 @@
+{% macro input(page_logo_path, page_title, header_links) %}
+<div id="header">
+    <div>
+        {% if page_logo_path %}<img src="{{ page_logo_path }}" alt="page_logo" width="30" height="30">{% endif %}
+        <a href="/">{{ page_title }}</a>
+    </div>
+    {% for link in header_links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+</div>
+{% endmacro %}

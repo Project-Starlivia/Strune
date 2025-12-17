@@ -1,0 +1,18 @@
+{% import "components/header.html" as header %}
+{% import "components/node-details.html" as node_details %}
+{% import "components/link-nodes.html" as link_nodes %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="./style.css" />
+    <title>{{ title }}</title>
+    {% endblock head %}
+</head>
+<body>
+{{ header::input(page_logo_path = page_logo_path, page_title = page_title, header_links = header_links) }}
+<div id="content">{% block content %}{% endblock content %}</div>
+{% include "components/powered_by_strune.html" ignore missing %}
+</body>
+</html>

@@ -698,7 +698,6 @@ dependencies = [
 name = "tera-render"
 version = "0.1.0"
 dependencies = [
- "anyhow",
  "operation",
  "serde",
  "serde_json",

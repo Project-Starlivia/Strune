@@ -1,0 +1,5 @@
+﻿{% macro input(nodes) %}
+<ul class="link-nodes_list">{% for node in nodes %}
+    <li class="link-nodes_item"><a href="{{ node.link }}.html">{{ node.label }}</a></li>
+</ul>{% endfor %}
+{% endmacro %}
