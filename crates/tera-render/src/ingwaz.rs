@@ -55,6 +55,7 @@ where T: Serialize + MaybeDependents
 pub fn render<T>(
     template_dir: &str,
     output_dir: impl AsRef<Path>,
+    base_path: &str,
     nodes: &[Node<T>],
 ) -> Result<(), tera::Error>
 where
@@ -65,7 +66,8 @@ where
 
     let mut ctx = Context::new();
 
-    ctx.insert("page_logo_path", "/public/logo.png");
+    ctx.insert("base_path", "");
+    ctx.insert("page_logo_path", "public/logo.png");
     ctx.insert("page_title", "Strune");
     let header_links: Vec<Value> = Vec::new();
     ctx.insert("header_links", &header_links);
