@@ -1,11 +1,13 @@
 {% macro input(brand_logo_path, brand_title, header_links) %}
 <header id="header">
-    <div id="header-brand_container">
-        {% if brand_logo_path %}<img src="{{ brand_logo_path }}" alt="brand_logo">{% endif %}
-        <a href="/">{{ brand_title }}</a>
-    </div>
     <nav id="header_navbar">
-        {% for link in header_links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+        <a id="header-brand" href="/Strune">
+            {% if brand_logo_path %}<img id="header-brand_logo" src="{{ brand_logo_path }}" alt="brand_logo">{% endif %}
+            <div id="header-brand_title">{{ brand_title }}</div>
+        </a>
+        <ul id="header_menu">
+            {% for link in header_links %}<li><a href="{{ link.url }}">{{ link.label }}</a></li>{% endfor %}
+        </ul>
     </nav>
 </header>
 {% endmacro %}

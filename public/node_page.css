@@ -1,0 +1,36 @@
+﻿
+h1{
+    color: var(--sub-color);
+}
+
+#node_view_container{
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 10px;
+}
+
+#dependencies_section{
+    grid-column: 1 / 2;
+}
+#current_node_section{
+    grid-column: 2 / 3;
+}
+#dependents_section{
+    grid-column: 3 / 4;
+}
+
+.link-nodes_label{
+    color: var(--sub-color);
+}
+
+.node-details_container{
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+    border: 3px solid var(--sub-color);
+    margin-top: 30px;
+    padding: 10px;
+    width: 300px;
+}
+.node-details_label{
+    text-align: center;
+    margin: 0;
+}

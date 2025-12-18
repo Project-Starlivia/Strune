@@ -1,4 +1,8 @@
 {% extends "ingwaz/base.html" %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="public/node_page.css" />
+{% endblock head %}
 
 {% block content %}
   {{ super() }}
@@ -7,18 +11,18 @@
 
     {% if dependencies %}
     <section id="dependencies_section" class="link-nodes_section">
-      <h2>Dependencies</h2>
+      <h2 class="link-nodes_label">Dependencies</h2>
       {{ link_nodes::input(nodes = dependencies) }}
     </section>
     {% endif %}
 
-    <section id="current_node_section" class="link-nodes_section">
+    <section id="current_node_section">
       {{ node_details::input(label = current_node.label, description = current_node.description) }}
     </section>
 
     {% if dependents %}
     <section id="dependents_section" class="link-nodes_section">
-      <h2>Dependents</h2>
+      <h2 class="link-nodes_label">Dependents</h2>
       {{ link_nodes::input(nodes = dependents) }}
     </section>
     {% endif %}
