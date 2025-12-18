@@ -43,9 +43,6 @@ fn main() -> Result<()> {
 
     let nodes = fill_dependents(nodes);
 
-    for node in nodes.iter() {
-        println!("{:?}", node.to_string());
-    }
     println!("nodes: {}", nodes.len());
 
     // Clear dist directory

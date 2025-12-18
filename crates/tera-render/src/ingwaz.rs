@@ -83,6 +83,7 @@ where
             .collect();
 
     for node in nodes {
+        println!("Rendering:{}", node.to_string());
         let file_link = render_nodes.get(&node.label).unwrap().link.clone();
         let path = output_dir.as_ref().join(format!("{file_link}.html"));
 
