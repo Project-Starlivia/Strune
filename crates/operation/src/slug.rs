@@ -59,8 +59,7 @@ where
             .options
             .slug()
             .map(str::to_string)
-            .unwrap_or_else(|| node.label.clone())
-            .to_lowercase();
+            .unwrap_or_else(|| node.label.clone());
 
         result.insert(node.label.clone(), slug);
     }
