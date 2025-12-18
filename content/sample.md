@@ -24,6 +24,9 @@ project-starlivia
 ## description
 ぱんじー
 https://henohenon.github.io/
+## options
+### slug
+henohenon
 
 # Rust
 > A language empowering everyone to build reliable and efficient software.
@@ -44,7 +47,7 @@ https://www.typescriptlang.org/
 A formal language comprising a set of instructions that produce various kinds of output. Programming languages are used to create programs that implement specific algorithms and control the behavior of machines.
 ## options
 ### slug
-programming_language
+programming-language
 
 # Programming Language?
 ## description
@@ -53,7 +56,7 @@ Languages that may be considered programming languages but have some debate arou
 Programming Language
 ## options
 ### slug
-programming_languageQ
+programming-languageQ
 
 # core Web Language
 ## description
@@ -62,7 +65,7 @@ The fundamental languages that form the basis of web development: HTML for struc
 Programming Language
 ## options
 ### slug
-core_web_language
+core-web-language
 
 
 # HTML
@@ -208,10 +211,11 @@ Ancient symbols used by Germanic peoples long ago. The Elder Futhark has 24 rune
 
 # ᛝ
 ## description
-ᛝ Ing ƿæs ærest mid Eástdenum
+>>> ᛝ Ing ƿæs ærest mid Eástdenum
 geseƿen secgum, oð he síððan e[á]st
 ofer ƿæg geƿát. ƿæn æfter ran.
 þus Heardingas þone hæle nemdon.
+https://ja.wikipedia.org/wiki/%E1%9B%9C
 ## dependencies
 - runes
 ## options
@@ -225,6 +229,9 @@ ingwaz
 https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#loader
 ## dependencies
 - Strune
+## options
+### slug
+crates_loader
 
 
 # crates/operation
@@ -233,7 +240,9 @@ https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#loader
 https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#operation
 ## dependencies
 - Strune
-
+## options
+### slug
+crates_operation
 
 # cli
 ## description
@@ -241,6 +250,9 @@ https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#operation
 https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#cli
 ## dependencies
 - Strune
+## options
+### slug
+strune_cli
 
 
 # tera-render/ingwaz
@@ -248,7 +260,7 @@ https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#cli
 One of the tera-render styles. It strongly expresses the connections between nodes.
 ## dependencies
 - crates/tera-render
-- ingwaz
+- ᛝ
 ## options
 ### slug
 tera-render_ingwaz
@@ -338,8 +350,11 @@ https://rust-lang.github.io/mdBook/
 > A knowledge graph is a network of entities, their semantic types, properties, and relationships. It's used to represent knowledge in a structured, machine-readable format that shows how concepts are connected.
 ## options
 ### slug
-knowledge_graph
+knowledge-graph
 
 # Structural Data Format
 ## description
 A data description format for structurally expressing data and resolving it between systems
+## options
+### slug
+structural-data-format
