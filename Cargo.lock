@@ -329,7 +329,6 @@ checksum = "f9fbbcab51052fe104eb5e5d351cf728d30a5be1fe14d9be8a3b097481fb97de"
 name = "loader"
 version = "0.1.0"
 dependencies = [
- "anyhow",
  "once_cell",
  "regex",
  "serde",
@@ -369,8 +368,6 @@ checksum = "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
 name = "operation"
 version = "0.1.0"
 dependencies = [
- "serde",
- "serde_json",
  "strune_core",
 ]
 
