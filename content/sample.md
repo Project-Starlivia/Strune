@@ -102,6 +102,7 @@ https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#tera-render
 - tera
 - HTML
 - CSS
+- SSG
 ## options
 ### slug
 crates_sailfish-render
