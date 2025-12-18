@@ -5,6 +5,7 @@ Strune is a simple, directional knowledge structure.
 - Rust
 - Project Starlivia
 - Structural Data Format
+- Knowledge Graph
 ## options
 ### slug
 index
