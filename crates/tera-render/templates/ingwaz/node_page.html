@@ -17,7 +17,7 @@
     {% endif %}
 
     <section id="current_node_section">
-      {{ node_details::input(label = current_node.label, description = current_node.description) }}
+      {{ node_details::input(label = current_node.label, description_html = description_html) }}
     </section>
 
     {% if dependents %}

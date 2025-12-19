@@ -1,6 +1,6 @@
-﻿{% macro input(label, description) %}
+﻿{% macro input(label, description_html) %}
 <article class="node-details_container">
     <h2 class="node-details_label">{{ label }}</h2>
-    <p class="node-details_description">{{ description }}</p>
+    <div class="node-details_description">{{ description_html | safe }}</div>
 </article>
 {% endmacro %}

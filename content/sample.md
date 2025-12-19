@@ -15,28 +15,32 @@ index
 へのへのん
 ## description
 > Oss libraries from @henohenon
-https://github.com/Project-Starlivia
+
+[https://github.com/Project-Starlivia](https://github.com/Project-Starlivia)
 ## options
 ### slug
 project-starlivia
 
 # へのへのん
 ## description
-ぱんじー
-https://henohenon.github.io/
+[ぱんじー](https://henohenon.github.io/)
 ## options
 ### slug
 henohenon
 
 # Rust
+## description
 > A language empowering everyone to build reliable and efficient software.
-https://rust-lang.org/
+
+[https://rust-lang.org/](https://rust-lang.org/)
 ## dependencies
 - Programming Language
 
 # TypeScript
+## description
 > TypeScript is JavaScript with syntax for types.
-https://www.typescriptlang.org/
+
+[https://www.typescriptlang.org/](https://www.typescriptlang.org/)
 ## dependencies
 - Programming Language
 - JavaScript
@@ -71,7 +75,8 @@ core-web-language
 # HTML
 ## description
 > HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).
-https://developer.mozilla.org/en-US/docs/Web/HTML
+
+[https://developer.mozilla.org/en-US/docs/Web/HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 ## dependencies
 - Programming Language?
 - core Web Language
@@ -83,7 +88,8 @@ https://developer.mozilla.org/en-US/docs/Web/HTML
 - core Web Language
 ## description
 > Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
-https://developer.mozilla.org/en-US/docs/Web/CSS
+
+[https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 # JavaScript
 ## dependencies
@@ -91,12 +97,14 @@ https://developer.mozilla.org/en-US/docs/Web/CSS
 - core Web Language
 ## description
 > Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
-https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 # crates/tera-render
 ## description
 > A rendering engine that generates static HTML sites from Strune nodes using the Tera template engine.
-https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#tera-render
+
+[https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#tera-render](https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#tera-render)
 ## dependencies
 - Strune
 - tera
@@ -111,7 +119,8 @@ crates_sailfish-render
 # tera
 ## description
 > A powerful, easy to use template engine for Rust Inspired by Jinja2 and Django templates
-https://keats.github.io/tera/
+
+[https://keats.github.io/tera/](https://keats.github.io/tera/)
 ## dependencies
 - Rust
 - Template Engine
@@ -121,7 +130,8 @@ https://keats.github.io/tera/
 # jinja2
 ## description
 > Jinja2 is a template engine written in pure Python. It provides a Django inspired non-XML syntax but supports inline expressions and an optional sandboxed environment.
-https://github.com/noirbizarre/jinja2
+
+[https://github.com/noirbizarre/jinja2](https://github.com/noirbizarre/jinja2)
 ## dependencies
 - Template Engine
 - HTML
@@ -136,7 +146,8 @@ template_engine
 # rust-sailfish
 ## description
 > Simple, small, and extremely fast template engine for Rust
-https://github.com/rust-sailfish/sailfish
+
+[https://github.com/rust-sailfish/sailfish](https://github.com/rust-sailfish/sailfish)
 ## dependencies
 - Rust
 - Template Engine
@@ -145,7 +156,8 @@ https://github.com/rust-sailfish/sailfish
 # cargo
 ## description
 > Cargo is the Rust package manager. It downloads dependencies, compiles packages, makes distributable packages, and uploads them to crates.io.
-https://doc.rust-lang.org/cargo/
+
+[https://doc.rust-lang.org/cargo/](https://doc.rust-lang.org/cargo/)
 ## dependencies
 - Rust
 
@@ -153,7 +165,8 @@ https://doc.rust-lang.org/cargo/
 # serde
 ## description
 > Serde is a framework for serializing and deserializing Rust data structures efficiently and generically.
-https://serde.rs/
+
+[https://serde.rs/](https://serde.rs/)
 ## dependencies
 - Rust
 
@@ -169,7 +182,8 @@ ssg
 # hugo
 ## description
 > The world's fastest framework for building websites. Hugo is a static site generator written in Go, known for its speed and flexibility.
-https://gohugo.io/
+
+[https://gohugo.io/](https://gohugo.io/)
 ## dependencies
 - SSG
 
@@ -177,7 +191,8 @@ https://gohugo.io/
 # astro
 ## description
 > Astro is a modern static site builder that allows you to use your favorite JavaScript framework (React, Vue, Svelte, etc.) and delivers zero JavaScript by default for faster sites.
-https://astro.build/
+
+[https://astro.build/](https://astro.build/)
 ## dependencies
 - SSG
 - JavaScript
@@ -187,7 +202,8 @@ https://astro.build/
 # jekyll
 ## description
 > Jekyll is a simple, blog-aware static site generator written in Ruby. It's the engine behind GitHub Pages.
-https://jekyllrb.com/
+
+[https://jekyllrb.com/](https://jekyllrb.com/)
 ## dependencies
 - SSG
 
@@ -195,13 +211,15 @@ https://jekyllrb.com/
 # Git
 ## description
 > Git is a distributed version control system for tracking changes in source code during software development. It's designed for coordinating work among programmers.
-https://git-scm.com/
+
+[https://git-scm.com/](https://git-scm.com/)
 
 
 # GitHub
 ## description
 > GitHub is a web-based platform for version control and collaboration using Git. It provides hosting for software development and offers distributed version control plus access control, bug tracking, and feature requests.
-https://github.com/
+
+[https://github.com/](https://github.com/)
 ## dependencies
 - Git
 
@@ -212,11 +230,12 @@ Ancient symbols used by Germanic peoples long ago. The Elder Futhark has 24 rune
 
 # ᛝ
 ## description
->>> ᛝ Ing ƿæs ærest mid Eástdenum
-geseƿen secgum, oð he síððan e[á]st
-ofer ƿæg geƿát. ƿæn æfter ran.
-þus Heardingas þone hæle nemdon.
-https://ja.wikipedia.org/wiki/%E1%9B%9C
+> ᛝ Ing ƿæs ærest mid Eástdenum
+> geseƿen secgum, oð he síððan e[á]st
+> ofer ƿæg geƿát. ƿæn æfter ran.
+> þus Heardingas þone hæle nemdon.
+
+[https://ja.wikipedia.org/wiki/%E1%9B%9C](https://ja.wikipedia.org/wiki/%E1%9B%9C)
 ## dependencies
 - runes
 ## options
@@ -227,7 +246,8 @@ ingwaz
 # crates/loader
 ## description
 > A library for loading Strune nodes from various file formats into the core Node structure.
-https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#loader
+
+[https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#loader](https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#loader)
 ## dependencies
 - Strune
 ## options
@@ -238,7 +258,8 @@ crates_loader
 # crates/operation
 ## description
 > Provides operations for analyzing and manipulating Strune node graphs. This package introduces trait-based extensibility for adding computed fields to nodes.
-https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#operation
+
+[https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#operation](https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#operation)
 ## dependencies
 - Strune
 ## options
@@ -248,7 +269,8 @@ crates_operation
 # cli
 ## description
 > Command-line interface for Strune. This is the main executable that ties all packages together.
-https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#cli
+
+[https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#cli](https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#cli)
 ## dependencies
 - Strune
 ## options
@@ -270,7 +292,8 @@ tera-render_ingwaz
 # JSON
 ## description
 > JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate.
-https://www.json.org/
+
+[https://www.json.org/](https://www.json.org/)
 ## dependencies
 - Structural Data Format
 
@@ -278,14 +301,16 @@ https://www.json.org/
 # Markdown
 ## description
 > Markdown is a lightweight markup language with plain text formatting syntax. It's designed to be converted to HTML and many other formats, widely used for documentation and content creation.
-https://daringfireball.net/projects/markdown/
+
+[https://daringfireball.net/projects/markdown/](https://daringfireball.net/projects/markdown/)
 ## dependencies
 - Structural Data Format
 
 # strune-core
 ## description
 > The core data structure library for Strune. This package defines the fundamental Node<T> type that all other packages depend on.
-https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#strune_core
+
+[https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#strune_core](https://github.com/Project-Starlivia/Strune?tab=readme-ov-file#strune_core)
 ## dependencies
 - Strune
 ## options
@@ -296,7 +321,8 @@ strune-core
 # regex
 ## description
 > A Rust library providing regular expression support with a focus on performance and correctness. Used for pattern matching and text processing.
-https://docs.rs/regex/
+
+[https://docs.rs/regex/](https://docs.rs/regex/)
 ## dependencies
 - Rust
 
@@ -304,7 +330,8 @@ https://docs.rs/regex/
 # once_cell
 ## description
 > A Rust library for single-assignment cells and lazy statics without macros, providing safe one-time initialization.
-https://docs.rs/once_cell/
+
+[https://docs.rs/once_cell/](https://docs.rs/once_cell/)
 ## dependencies
 - Rust
 
@@ -312,7 +339,8 @@ https://docs.rs/once_cell/
 # thiserror
 ## description
 > A Rust library that provides a convenient derive macro for the standard library's std::error::Error trait, making error handling more ergonomic.
-https://docs.rs/thiserror/
+
+[https://docs.rs/thiserror/](https://docs.rs/thiserror/)
 ## dependencies
 - Rust
 
@@ -320,7 +348,8 @@ https://docs.rs/thiserror/
 # obsidian
 ## description
 > Obsidian is a knowledge base application that works on local Markdown files. It features a powerful linking system and graph view for visualizing connections between notes.
-https://obsidian.md/
+
+[https://obsidian.md/](https://obsidian.md/)
 ## dependencies
 - Markdown
 - Knowledge Graph
@@ -329,7 +358,8 @@ https://obsidian.md/
 # Zola
 ## description
 > A fast static site generator written in Rust. Zola uses the Tera template engine and compiles to a single binary with no dependencies.
-https://www.getzola.org/
+
+[https://www.getzola.org/](https://www.getzola.org/)
 ## dependencies
 - Rust
 - SSG
@@ -339,7 +369,8 @@ https://www.getzola.org/
 # mdBook
 ## description
 > A utility to create modern online books from Markdown files, written in Rust. It's used extensively in the Rust community for documentation.
-https://rust-lang.github.io/mdBook/
+
+[https://rust-lang.github.io/mdBook/](https://rust-lang.github.io/mdBook/)
 ## dependencies
 - Rust
 - SSG

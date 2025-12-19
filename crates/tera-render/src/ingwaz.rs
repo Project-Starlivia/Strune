@@ -7,6 +7,7 @@ use tera::{Tera, Context};
 use operation::MaybeDependents;
 use strune_core::node::Node;
 use operation::slug::{label_slug_map, MaybeSlug};
+use pulldown_cmark::{Parser, Options, html};
 
 #[derive(Serialize)]
 pub struct RenderNode{
@@ -21,6 +22,18 @@ impl RenderNode {
         Self{label, link}
     }
 }
+
+/// Converts Markdown text to HTML
+fn markdown_to_html(markdown: &str) -> String {
+    let mut options = Options::empty();
+    options.insert(Options::ENABLE_STRIKETHROUGH);
+    options.insert(Options::ENABLE_TABLES);
+
+    let parser = Parser::new_ext(markdown, options);
+    let mut html_output = String::new();
+    html::push_html(&mut html_output, parser);
+    html_output
+}
 fn render_node_page<T>(
     tera: &Tera,
     mut context: Context,
@@ -32,6 +45,10 @@ where T: Serialize + MaybeDependents
     context.insert("title", &node.label);
 
     context.insert("current_node", &node);
+
+    // Convert description from Markdown to HTML
+    let description_html = markdown_to_html(&node.description);
+    context.insert("description_html", &description_html);
 
     let dependencies: Vec<&RenderNode> = node
         .dependencies
