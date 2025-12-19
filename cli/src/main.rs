@@ -55,7 +55,7 @@ fn main() -> Result<()> {
     render(
         "crates/tera-render/templates/**/*.html",
         "dist",
-        "/projects/Strune/dist/",
+        "/Strune/",
         nodes.as_slice(),
     )
     .map_err(|e| {
