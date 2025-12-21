@@ -1,8 +1,8 @@
-﻿use std::path::Path;
+use std::path::Path;
 use serde::Deserialize;
 use serde_json::{Value, Map};
 
-use strune_core::node::Node;
+use crate::core::Node;
 
 #[derive(Debug, Deserialize)]
 struct RawNode {

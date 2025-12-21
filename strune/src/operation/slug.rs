@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use strune_core::node::Node;
+use crate::core::Node;
 
 pub trait MaybeSlug {
     fn slug(&self) -> Option<&str>;
@@ -16,7 +16,7 @@ macro_rules! impl_has_slug_detail {
     (<$($gen:tt),*> $ty:ty, $field:ident) => {
         $crate::impl_has!(
             <$($gen),*> $ty, $field;
-            $crate::HasSlug,
+            $crate::operation::HasSlug,
             slug -> &str,
             slug_mut -> &mut String
         );
@@ -35,7 +35,7 @@ macro_rules! impl_maybe_slug_detail {
     (<$($gen:tt),*> $ty:ty, $field:ident) => {
         $crate::impl_maybe!(
             <$($gen),*> $ty, $field;
-            $crate::MaybeSlug,
+            $crate::operation::MaybeSlug,
             slug -> Option<&str>,
             slug_mut -> &mut Option<String>
         );

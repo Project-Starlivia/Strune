@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use strune_core::node::Node;
+use crate::core::Node;
 
 pub trait MaybeDependents {
     fn dependents(&self) -> Option<&[String]>;
@@ -16,7 +16,7 @@ macro_rules! impl_has_dependents_detail {
     (<$($gen:tt),*> $ty:ty, $field:ident) => {
         $crate::impl_has!(
             <$($gen),*> $ty, $field;
-            $crate::HasDependents,
+            $crate::operation::HasDependents,
             dependents -> &[String],
             dependents_mut -> &mut Vec<String>
         );
@@ -35,7 +35,7 @@ macro_rules! impl_maybe_dependents_detail {
     (<$($gen:tt),*> $ty:ty, $field:ident) => {
         $crate::impl_maybe!(
             <$($gen),*> $ty, $field;
-            $crate::MaybeDependents,
+            $crate::operation::MaybeDependents,
             dependents -> Option<&[String]>,
             dependents_mut -> &mut Option<Vec<String>>
         );
@@ -61,7 +61,7 @@ where
             reverse.entry(dep.clone()).or_default().push(node.label.clone());
         }
     }
-    
+
     for node in &mut nodes {
         let deps = reverse.remove(&node.label).unwrap_or_default();
         let slot = node.options.dependents_mut();

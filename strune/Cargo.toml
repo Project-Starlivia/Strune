@@ -1,0 +1,22 @@
+[package]
+name = "strune"
+version = "0.1.0"
+edition = "2021"
+authors = ["Project Starlivia"]
+license = "MIT"
+description = "A simple, directional knowledge structure library for building linked references and word books"
+repository = "https://github.com/your-username/Strune"
+homepage = "https://github.com/your-username/Strune"
+documentation = "https://docs.rs/strune"
+readme = "README.md"
+keywords = ["knowledge", "graph", "ssg", "static-site", "markdown"]
+categories = ["data-structures", "parser-implementations", "template-engine"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+regex = "1.12"
+once_cell = "1.21"
+thiserror = "2.0"
+tera = "1.20"
+pulldown-cmark = "0.12"

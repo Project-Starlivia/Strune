@@ -1,9 +1,7 @@
 [workspace]
 members = [
-    "strune_core",
-    "cli",
-    "crates/loader",
-    "crates/operation", "crates/tera-render",
+    "strune",
+    "sample",
 ]
 
 resolver = "3"

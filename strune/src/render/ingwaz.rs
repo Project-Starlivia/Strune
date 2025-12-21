@@ -1,12 +1,11 @@
-﻿use std::collections::HashMap;
+use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 use serde::Serialize;
 use serde_json::Value;
 use tera::{Tera, Context};
-use operation::MaybeDependents;
-use strune_core::node::Node;
-use operation::slug::{label_slug_map, MaybeSlug};
+use crate::operation::{MaybeDependents, MaybeSlug, label_slug_map};
+use crate::core::Node;
 use pulldown_cmark::{Parser, Options, html};
 
 #[derive(Serialize)]

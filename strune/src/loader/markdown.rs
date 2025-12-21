@@ -1,11 +1,11 @@
-﻿use std::collections::HashMap;
+use std::collections::HashMap;
 use std::path::Path;
 use regex::Regex;
 use once_cell::sync::Lazy;
 use serde_json::{Map, Value};
 use thiserror::Error;
 
-use strune_core::node::Node;
+use crate::core::Node;
 
 #[derive(Debug, Clone, Default)]
 pub struct RawNode {

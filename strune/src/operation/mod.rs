@@ -1,8 +1,8 @@
 pub mod dependents;
-pub use dependents::{HasDependents, MaybeDependents};
+pub use dependents::{HasDependents, MaybeDependents, fill_dependents};
 
 pub mod slug;
-pub use slug::{HasSlug, MaybeSlug};
+pub use slug::{HasSlug, MaybeSlug, label_slug_map};
 
 #[macro_export]
 macro_rules! impl_has {
