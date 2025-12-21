@@ -62,7 +62,6 @@ fn main() -> Result<()> {
 
     // Copy public directory to dist/public
     let public_path = base_path.join("public");
-    println!("public_path: {:?}", public_path);
     if public_path.exists() {
         let dist_public = dist_path.join("public");
         copy_dir_all(public_path, &dist_public)?;
