@@ -129,9 +129,3 @@ https://project-starlivia.github.io/Strune/
 ## License
 
 MIT License - see [LICENSE](../LICENSE) for details.
-
-## Links
-
-- [Repository](https://github.com/your-username/Strune)
-- [Issues](https://github.com/your-username/Strune/issues)
-- [Changelog](https://github.com/your-username/Strune/blob/main/CHANGELOG.md)
