@@ -24,10 +24,19 @@ header{
     height: 80px;
     max-width: 1024px;
     margin: auto;
-}
-#header_navbar{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 100%;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
 }
 
 #header-brand{
@@ -44,6 +53,17 @@ header{
 
 #header-brand_title{
     font-size: xx-large;
+}
+
+#header_menu {
+    display: flex;
+    gap: 24px;
+    margin: 0 20px;
+}
+
+#header_menu a {
+    font-size: large;
+    transition: color 0.2s ease;
 }
 
 
