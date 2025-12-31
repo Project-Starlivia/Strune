@@ -141,7 +141,7 @@ Strune ノードグラフの分析と操作のための機能を提供します�
 - `current_node` – レンダリング中のノード
 - `dependencies` – リンク付きの親ノードリスト
 - `dependents` – リンク付きの子ノードリスト
-- `base_path`, `brand_logo_path`, `brand_title` – サイト設定
+- `base_path`, `brand_logo`, `brand_title` – サイト設定
 
 **依存関係**: `strune_core`, `operation`, `tera`, `serde`, `serde_json`
 

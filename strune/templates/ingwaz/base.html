@@ -18,7 +18,7 @@
     {% endblock head %}
 </head>
 <body>
-{{ header::input(base_path = config.base_path, brand_logo_path = config.brand_logo_path, brand_title = config.brand_title, menu = config.menu) }}
+{{ header::input(base_path = config.base_path, brand_logo = config.brand_logo, brand_title = config.brand_title, menu = config.menu) }}
 <main id="content">{% block content %}{% endblock content %}</main>
 {% include "components/powered_by_strune.html" ignore missing %}
 </body>

@@ -62,8 +62,17 @@ header{
 }
 
 #header_menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: large;
     transition: color 0.2s ease;
+}
+
+.menu-icon {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
 }
 
 

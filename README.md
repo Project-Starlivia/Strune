@@ -142,7 +142,7 @@ A rendering engine that generates static HTML sites from Strune nodes using the 
 - `current_node` – The node being rendered
 - `dependencies` – List of parent nodes with links
 - `dependents` – List of child nodes with links
-- `base_path`, `brand_logo_path`, `brand_title` – Site configuration
+- `base_path`, `brand_logo`, `brand_title` – Site configuration
 
 **Dependencies**: `strune_core`, `operation`, `tera`, `serde`, `serde_json`
 
