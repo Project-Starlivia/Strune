@@ -3,4 +3,18 @@
 base_path: "/Strune/"
 brand_logo_path: "public/logo.svg"
 brand_title: "Strune"
-header_links: []
+
+# Stylesheet configuration
+# Specify CSS file paths relative to your public directory
+styles:
+   - "public/style.css"
+
+# Additional stylesheets (uncomment to use)
+# styles:
+#   - "css/base.css"
+#   - "css/theme.css"
+#   - "css/custom.css"
+
+menu:
+  - label: "Github"
+    url: "https://github.com/Project-Starlivia/Strune"

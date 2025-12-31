@@ -1,13 +1,15 @@
-{% macro input(brand_logo_path, brand_title, header_links) %}
-<header id="header">
-    <nav id="header_navbar">
-        <a id="header-brand" href="{{ config.base_path }}">
+{% macro input(base_path, brand_logo_path, brand_title, menu) %}
+<header id="header-nav_bar">
+    <div class="nav-left">
+        <a id="header-brand" href="{{ base_path }}">
             {% if brand_logo_path %}<img id="header-brand_logo" src="{{ brand_logo_path }}" alt="brand_logo">{% endif %}
             <div id="header-brand_title">{{ brand_title }}</div>
         </a>
-        <ul id="header_menu">
-            {% for link in header_links %}<li><a href="{{ link.url }}">{{ link.label }}</a></li>{% endfor %}
-        </ul>
-    </nav>
+    </div>
+    <div class="nav-right">
+        <nav id="header_menu">
+            {% for link in menu %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+        </nav>
+    </div>
 </header>
 {% endmacro %}

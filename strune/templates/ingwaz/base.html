@@ -7,14 +7,18 @@
 <head>
     {% block head %}
     <base href="{{ config.base_path }}">
-    <link rel="stylesheet" href="public/style.css" />
+    {% if config.styles %}
+        {% for style in config.styles %}
+        <link rel="stylesheet" href="{{ style }}" />
+        {% endfor %}
+    {% endif %}
     <title>{{ title }}</title>
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/x-icon" href="public/favicon.ico">
     {% endblock head %}
 </head>
 <body>
-{{ header::input(brand_logo_path = config.brand_logo_path, brand_title = config.brand_title, header_links = config.header_links) }}
+{{ header::input(base_path = config.base_path, brand_logo_path = config.brand_logo_path, brand_title = config.brand_title, menu = config.menu) }}
 <main id="content">{% block content %}{% endblock content %}</main>
 {% include "components/powered_by_strune.html" ignore missing %}
 </body>
