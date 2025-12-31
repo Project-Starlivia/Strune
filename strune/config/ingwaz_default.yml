@@ -16,6 +16,6 @@ styles:
 #   - "css/custom.css"
 
 menu:
-  - label: ""
+  - label: "Github"
     url: "https://github.com/Project-Starlivia/Strune"
     icon: "public/github-mark/github-mark-white.svg"
