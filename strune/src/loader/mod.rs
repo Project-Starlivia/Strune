@@ -1,5 +1,6 @@
 pub mod markdown;
 pub mod json;
+pub mod yaml;
 
 pub use markdown::{
     load_nodes_from_markdown,
@@ -14,4 +15,9 @@ pub use markdown::{
 pub use json::{
     load_nodes_from_json,
     LoadError as JsonLoadError
+};
+
+pub use yaml::{
+    load_config_from_yaml,
+    LoadError as YamlLoadError
 };
