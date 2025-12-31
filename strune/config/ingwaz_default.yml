@@ -1,0 +1,6 @@
+# Default configuration for Strune rendering
+
+base_path: "/Strune/"
+brand_logo_path: "public/logo.svg"
+brand_title: "Strune"
+header_links: []
