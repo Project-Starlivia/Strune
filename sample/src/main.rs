@@ -1,10 +1,10 @@
 use std::fs;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use serde::{Deserialize, Serialize};
 use anyhow::Result;
 use serde_json::Value;
 
-use strune::{Node, render, impl_maybe_dependents, impl_maybe_slug, load_nodes_from_markdown, fill_dependents};
+use strune::{Node, render, impl_maybe_dependents, impl_maybe_slug, load_nodes_from_markdown, fill_dependents, DEFAULT_CONFIG};
 
 #[derive(Clone, Debug, Serialize, Deserialize, Default)]
 pub struct MyOpts<T>
@@ -49,10 +49,18 @@ fn main() -> Result<()> {
     }
     fs::create_dir_all(&dist_path)?;
 
+    // Determine config path based on environment
+    let config_path = if std::env::var("STRUNE_ENV").ok().as_deref() == Some("dev") {
+        base_path.join("config/development.yml")
+    } else {
+        PathBuf::from(DEFAULT_CONFIG)
+    };
+    println!("Using config path: {}", config_path.display());
+
     render(
         "strune/templates/**/*.html",
         &dist_path,
-        "/Strune/",
+        &config_path,
         nodes.as_slice(),
     )
     .map_err(|e| {

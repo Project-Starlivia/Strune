@@ -1,4 +1,5 @@
 */dist
+sample/config/development.yml
 /target
 /.idea
 /.vscode
