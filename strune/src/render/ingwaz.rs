@@ -4,9 +4,11 @@ use std::path::Path;
 use serde::Serialize;
 use serde_json::Value;
 use tera::{Tera, Context};
-use crate::operation::{MaybeDependents, MaybeSlug, label_slug_map};
-use crate::core::Node;
 use pulldown_cmark::{Parser, Options, html};
+
+use crate::core::Node;
+use crate::operation::{MaybeDependents, MaybeSlug, label_slug_map};
+use crate::loader::yaml::load_config_from_yaml;
 
 #[derive(Serialize)]
 pub struct RenderNode{
@@ -22,7 +24,8 @@ impl RenderNode {
     }
 }
 
-/// Converts Markdown text to HTML
+pub const DEFAULT_CONFIG: &str = "strune/config/ingwaz_default.yml";
+
 fn markdown_to_html(markdown: &str) -> String {
     let mut options = Options::empty();
     options.insert(Options::ENABLE_STRIKETHROUGH);
@@ -71,7 +74,7 @@ where T: Serialize + MaybeDependents
 pub fn render<T>(
     template_dir: &str,
     output_dir: impl AsRef<Path>,
-    base_path: &str,
+    config_path: impl AsRef<Path>,
     nodes: &[Node<T>],
 ) -> Result<(), tera::Error>
 where
@@ -82,11 +85,14 @@ where
 
     let mut ctx = Context::new();
 
-    ctx.insert("base_path", base_path);
-    ctx.insert("brand_logo_path", "public/logo.svg");
-    ctx.insert("brand_title", "Strune");
-    let header_links: Vec<Value> = Vec::new();
-    ctx.insert("header_links", &header_links);
+    // Load config from YAML or use default
+    let config = load_config_from_yaml(config_path).map_err(|e| tera::Error::msg(e.to_string()))?;
+
+    if let Value::Object(config_map) = config {
+        ctx.insert("config", &Value::Object(config_map));
+    } else {
+        return Err(tera::Error::msg("config must be an object"));
+    }
 
     let slug_map = label_slug_map(nodes);
     let render_nodes: HashMap<String, RenderNode> =

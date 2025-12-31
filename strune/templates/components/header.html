@@ -1,7 +1,7 @@
 {% macro input(brand_logo_path, brand_title, header_links) %}
 <header id="header">
     <nav id="header_navbar">
-        <a id="header-brand" href="/Strune">
+        <a id="header-brand" href="{{ config.base_path }}">
             {% if brand_logo_path %}<img id="header-brand_logo" src="{{ brand_logo_path }}" alt="brand_logo">{% endif %}
             <div id="header-brand_title">{{ brand_title }}</div>
         </a>
