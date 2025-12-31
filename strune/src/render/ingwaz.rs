@@ -10,6 +10,11 @@ use crate::core::Node;
 use crate::operation::{MaybeDependents, MaybeSlug, label_slug_map};
 use crate::loader::yaml::load_config_from_yaml;
 
+use super::main::{
+    copy_public_directory,
+    prepare_output_dir,
+};
+
 #[derive(Serialize)]
 pub struct RenderNode{
     label: String,
@@ -25,6 +30,21 @@ impl RenderNode {
 }
 
 pub const DEFAULT_CONFIG: &str = "strune/config/ingwaz_default.yml";
+
+/// Build render node map from nodes
+fn build_render_node_map<T>(nodes: &[Node<T>]) -> HashMap<String, RenderNode>
+where
+    T: MaybeSlug,
+{
+    let slug_map = label_slug_map(nodes);
+    nodes.iter()
+        .map(|n| {
+            let key = n.label.clone();
+            let value = RenderNode::new_with_map(key.clone(), &slug_map);
+            (key, value)
+        })
+        .collect()
+}
 
 fn markdown_to_html(markdown: &str) -> String {
     let mut options = Options::empty();
@@ -73,45 +93,49 @@ where T: Serialize + MaybeDependents
 
 pub fn render<T>(
     template_dir: &str,
-    output_dir: impl AsRef<Path>,
+    output_dir_path: impl AsRef<Path>,
+    public_dir_path: impl AsRef<Path>,
     config_path: impl AsRef<Path>,
     nodes: &[Node<T>],
 ) -> Result<(), tera::Error>
 where
     T: Serialize + MaybeSlug + MaybeDependents,
 {
+    let output_dir_path = output_dir_path.as_ref();
+    let public_dir_path = public_dir_path.as_ref();
+    let config_path = config_path.as_ref();
+
+    // 1. Initialize: Prepare output directory and load template engine
+    prepare_output_dir(output_dir_path).map_err(|e| tera::Error::msg(e))?;
     let tera = Tera::new(template_dir)?;
-    fs::create_dir_all(&output_dir).map_err(|e| tera::Error::msg(e.to_string()))?;
 
-    let mut ctx = Context::new();
-
-    // Load config from YAML or use default
+    // 2. Load configuration
     let config = load_config_from_yaml(config_path).map_err(|e| tera::Error::msg(e.to_string()))?;
-
-    if let Value::Object(config_map) = config {
-        ctx.insert("config", &Value::Object(config_map));
+    let config_map = if let Value::Object(map) = config {
+        map
     } else {
         return Err(tera::Error::msg("config must be an object"));
-    }
+    };
 
-    let slug_map = label_slug_map(nodes);
-    let render_nodes: HashMap<String, RenderNode> =
-        nodes.iter()
-            .map(|n| {
-                let key = n.label.clone();
-                let value = RenderNode::new_with_map(key.clone(), &slug_map);
-                (key, value)
-            })
-            .collect();
+    // 3. Copy public directory
+    copy_public_directory(public_dir_path, output_dir_path).map_err(|e| tera::Error::msg(e))?;
 
+    // 4. Build template context
+    let mut ctx = Context::new();
+    ctx.insert("config", &Value::Object(config_map));
+
+    // 5. Build render node map
+    let render_nodes = build_render_node_map(nodes);
+
+    // 6. Render HTML pages for each node
     for node in nodes {
-        println!("Rendering:{}", node.to_string());
+        println!("Rendering: {}", node.to_string());
         let file_link = render_nodes.get(&node.label).unwrap().link.clone();
-        let path = output_dir.as_ref().join(format!("{file_link}.html"));
+        let path = output_dir_path.join(format!("{}.html", file_link));
 
         let html = render_node_page::<T>(&tera, ctx.clone(), node, &render_nodes)?;
-
         fs::write(path, html).map_err(|e| tera::Error::msg(e.to_string()))?;
     }
+
     Ok(())
 }

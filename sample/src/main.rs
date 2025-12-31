@@ -42,12 +42,6 @@ fn main() -> Result<()> {
 
     println!("nodes: {}", nodes.len());
 
-    // Clear dist directory
-    let dist_path = base_path.join("dist");
-    if dist_path.exists() {
-        fs::remove_dir_all(&dist_path)?;
-    }
-    fs::create_dir_all(&dist_path)?;
 
     // Determine config path based on environment
     let config_path = if std::env::var("STRUNE_ENV").ok().as_deref() == Some("dev") {
@@ -57,9 +51,13 @@ fn main() -> Result<()> {
     };
     println!("Using config path: {}", config_path.display());
 
+    let dist_path = base_path.join("dist");
+    let public_path = base_path.join("public");
+
     render(
         "strune/templates/**/*.html",
         &dist_path,
+        &public_path,
         &config_path,
         nodes.as_slice(),
     )
@@ -67,14 +65,6 @@ fn main() -> Result<()> {
         eprintln!("render error: {:?}", e);
         e
     })?;
-
-    // Copy public directory to dist/public
-    let public_path = base_path.join("public");
-    if public_path.exists() {
-        let dist_public = dist_path.join("public");
-        copy_dir_all(public_path, &dist_public)?;
-        println!("Copied public directory to dist/public");
-    }
 
     Ok(())
 }
